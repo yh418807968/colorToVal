@@ -31,12 +31,9 @@ def search(data):
         if val in count:count[val] = 1+ count[val]
         else: count[val] = 1
         if val in result:
-            if count[val] > 2:
-                result[val].append(key)
-            else:
-                result[val]=[result[val], key]
+            if count[val] > 1:result[val].append(key)
         else:
-            result[val]=key
+            result[val]=[key]
     return result
     # SETTINGS['leadingzero'] = settings.get('leadingzero', False)
 
@@ -63,6 +60,7 @@ class CssRemCommand(sublime_plugin.EventListener):
             value = '#'+match.group(0)
            
             data = search(SETTINGS['data'])
+            print(data)
             rename = data[value]
 
             commentStr = '';
@@ -73,6 +71,7 @@ class CssRemCommand(sublime_plugin.EventListener):
 
             # set completion snippet
             for index in range(len(rename)):
+
                 snippet+= [[value +'\t'+'-> '+ rename[index] +'(keep number value)', '\\'+rename[index][0] +rename[index][1:]+commentStr]]
     
         return snippet
