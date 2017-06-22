@@ -1,0 +1,11 @@
+{
+	"exts": [".css", ".scss", ".less", ".sass", ".styl"],
+	
+    "data":{
+    
+			"$c-bg1":"#dadada",
+			"$c-night":"#dee",
+			"$c-ll":"#dee",
+			"$c-bg2":"#fff",    
+	}
+}
