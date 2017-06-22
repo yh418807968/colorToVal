@@ -14,10 +14,10 @@ def plugin_loaded():
 
 def init_settings():
     get_settings()
-    sublime.load_settings('colorRename.sublime-settings').add_on_change('get_settings', get_settings)
+    sublime.load_settings('colorToVal.sublime-settings').add_on_change('get_settings', get_settings)
 
 def get_settings():
-    settings = sublime.load_settings('colorRename.sublime-settings')
+    settings = sublime.load_settings('colorToVal.sublime-settings')
 
     SETTINGS['exts'] = settings.get('exts', [".css", ".scss", ".less", ".sass", ".styl"])
     SETTINGS['data'] = settings.get('data')
@@ -60,7 +60,7 @@ class CssRemCommand(sublime_plugin.EventListener):
             value = '#'+match.group(0)
            
             data = search(SETTINGS['data'])
-            print(data)
+            # print(data)
             rename = data[value]
 
             commentStr = '';
