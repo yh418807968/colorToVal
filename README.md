@@ -32,15 +32,6 @@ colorToVal
 	}。
 	用户在setting-User中设置数据后，可将此处删除。
 	
-用户自定义参数：Sublime Text -> Preferences -> Package Settings -> colorToVal -> setting-User
-	{
-		"data":{
-		//your data here
-			}
-	}
-	
-	
-
 
 
 
