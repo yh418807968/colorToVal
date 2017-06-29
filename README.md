@@ -19,7 +19,7 @@ colorToVal
 
 ##### 配置参数
 
-参数配置文件：Sublime Text -> Preferences -> Package Settings -> colorToVal -> setting-Default
+参数配置默认文件：Sublime Text -> Preferences -> Package Settings -> colorToVal -> setting-Default
 
 * `exts` - 启用此插件的文件类型。默认为：[".css", ".scss", ".less", ".sass", ".styl"]。
 * `data` - 用户自定义的数据。默认举例为：
@@ -31,6 +31,16 @@ colorToVal
 			"$c-bg3":"#fff",    
 	}。
 	用户在setting-User中设置数据后，可将此处删除。
+	
+用户自定义参数：Sublime Text -> Preferences -> Package Settings -> colorToVal -> setting-User
+	{
+		"data":{
+		//your data here
+			}
+	}
+	
+	
+
 
 
 
