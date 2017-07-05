@@ -11,6 +11,9 @@ lastCompletion = {"needFix": False, "value": None, "region": None}
 
 def plugin_loaded():
     init_settings()
+def plugin_unloaded():
+    sublime.load_settings('colorToVal.sublime-settings').clear_on_change('get_settings')
+    
 
 def init_settings():
     get_settings()
@@ -40,22 +43,23 @@ def search(data):
 def get_setting(view, key):
     return view.settings().get(key, SETTINGS[key]);
 
-class CssRemCommand(sublime_plugin.EventListener):
+class colorCommand(sublime_plugin.EventListener):
 
     def on_query_completions(self, view, prefix, locations):
-
+        print(prefix)
         # only works on specific file types
         fileName, fileExtension = os.path.splitext(view.file_name())
         if not fileExtension.lower() in get_setting(view, 'exts'):
             return []
+
 
         # reset completion match
         lastCompletion["needFix"] = False
         location = locations[0]
         snippet = []
 
-        # get rem match
-        match = re.compile("([a-fA-F1-9]{3,6})").match(prefix)
+        # get  match
+        match = re.compile("([a-fA-F0-9]{3,6})").match(prefix)
         if match:
             value = '#'+match.group(0)
            
@@ -72,7 +76,7 @@ class CssRemCommand(sublime_plugin.EventListener):
             # set completion snippet
             for index in range(len(rename)):
 
-                snippet+= [[value +'\t'+'-> '+ rename[index] +'(keep number value)', '\\'+rename[index][0] +rename[index][1:]+commentStr]]
+                snippet+= [[value +'t'+'\t'+'-> '+ rename[index] +'(keep number value)', '\\'+rename[index][0] +rename[index][1:]+commentStr]]
     
         return snippet
 

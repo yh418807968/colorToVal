@@ -2,10 +2,10 @@
 	"exts": [".css", ".scss", ".less", ".sass", ".styl"],
 	//数据举例
 	"data":{
-    
-			"$c-bg1":"#dadada",
-			"$c-night":"#dee",
-			"$c-bg2-night":"#dee",
-			"$c-bg3":"#fff",    
+		 
+		"$c-bg1":"#dadada",
+		"$c-night":"#000",
+		"$c-bg2-night":"#000",
+		"$c-bg3":"#fff",      
 	}
 }

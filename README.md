@@ -26,11 +26,11 @@ colorToVal
 	"data":{
     
 			"$c-bg1":"#dadada",
-			"$c-night":"#dee",
-			"$c-bg2-night":"#dee",
+			"$c-night":"#000",
+			"$c-bg2-night":"#000",
 			"$c-bg3":"#fff",    
 	}。
-	用户在setting-User中设置数据后，可将此处删除。
+	用户在setting-User中设置数据后，将覆盖此数据。
 	
 用户参数配置文件：Sublime Text -> Preferences -> Package Settings -> colorToVal -> setting-User
 	{
@@ -38,6 +38,10 @@ colorToVal
 			//your data here   
 		}
 	}
+	注：key变量名为，value为16进制色值，一个16进制色值可对应多个变量。
+
+##### 使用
+输入16进制色值(可省略#)，以字母t为触发快捷键，找到对应的变量，按enter键替换。详情见动图colorToVal.gif
 
 
 @ youhong SOHU SNS FE-Group
